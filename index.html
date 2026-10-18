@@ -1,388 +1,854 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kaouthar Hamdan — AI & Data Science</title>
+<meta name="description" content="Kaouthar Hamdan — Data Science and AI master's student working on machine learning, applied AI, data engineering and optimization.">
+
+<title>Kaouthar Hamdan — Data Science, Machine Learning & AI</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+
 <style>
+
 :root{
+
   --dg:#0A3323; --moss:#839958; --beige:#F7F4D5; --rose:#D3968C; --teal:#105666; --cat:#16151a;
+
   --px:'Pixelify Sans',monospace; --mono:'VT323',monospace; --body:'DM Sans',sans-serif;
+
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
+
 html{scroll-behavior:smooth}
+
 body{
-  background:var(--dg);color:var(--beige);font-family:var(--body);line-height:1.6;overflow-x:hidden;
-  background-image:
+
+background:var(--dg);color:var(--beige);font-family:var(--body);line-height:1.6;overflow-x:hidden;
+
+background-image:
+
     radial-gradient(circle at 15% 10%,rgba(211,150,140,.28),transparent 40%),
+
     radial-gradient(circle at 90% 40%,rgba(16,86,102,.55),transparent 45%),
+
     radial-gradient(circle at 20% 90%,rgba(131,153,88,.3),transparent 40%),
+
     radial-gradient(rgba(247,244,213,.09) 1.5px,transparent 1.5px);
-  background-size:auto,auto,auto,22px 22px;background-attachment:fixed;
+
+background-size:auto,auto,auto,22px 22px;background-attachment:fixed;
+
 }
+
 a{color:inherit}
+
 .wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+
 section{padding:4.5rem 0}
 
+
+
 /* NAV */
+
 nav{position:sticky;top:.8rem;z-index:50;max-width:800px;margin:.8rem auto 0;
-  display:flex;justify-content:space-between;align-items:center;gap:1rem;
-  padding:.55rem 1.2rem;border-radius:999px;
-  background:linear-gradient(180deg,#fff9 0%,var(--beige) 45%,#e6e2bb 100%);
-  border:2px solid var(--dg);box-shadow:0 4px 0 var(--rose);color:var(--dg)}
+
+display:flex;justify-content:space-between;align-items:center;gap:1rem;
+
+padding:.55rem 1.2rem;border-radius:999px;
+
+background:linear-gradient(180deg,#fff9 0%,var(--beige) 45%,#e6e2bb 100%);
+
+border:2px solid var(--dg);box-shadow:0 4px 0 var(--rose);color:var(--dg)}
+
 .logo{font-family:var(--px);font-weight:700;font-size:1.05rem}
+
 .logo b{color:var(--rose)}
-nav ul{display:flex;gap:1.1rem;list-style:none;font-family:var(--mono);font-size:1.2rem}
+
+nav ul{display:flex;gap:.9rem;list-style:none;font-family:var(--mono);font-size:1.2rem}
+
 nav a{text-decoration:none}
+
 nav a:hover{color:var(--teal);text-decoration:underline wavy var(--rose)}
 
+
+
 /* WINDOW */
+
 .win{background:var(--beige);color:var(--dg);border:2px solid var(--dg);border-radius:14px;
-  box-shadow:6px 6px 0 var(--rose);overflow:hidden;--c1:var(--moss);--c2:var(--rose);
-  transition:transform .2s,box-shadow .2s}
+
+box-shadow:6px 6px 0 var(--rose);overflow:hidden;--c1:var(--moss);--c2:var(--rose);
+
+transition:transform .2s,box-shadow .2s}
+
 .win:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--rose)}
+
 .bar{display:flex;align-items:center;gap:.4rem;padding:.4rem .8rem;color:var(--dg);
-  background:linear-gradient(90deg,var(--c1),var(--c2));border-bottom:2px solid var(--dg);
-  font-family:var(--mono);font-size:1.15rem;letter-spacing:.03em}
+
+background:linear-gradient(90deg,var(--c1),var(--c2));border-bottom:2px solid var(--dg);
+
+font-family:var(--mono);font-size:1.15rem;letter-spacing:.03em}
+
 .bar i{width:11px;height:11px;border-radius:50%;background:var(--beige);border:1.5px solid var(--dg)}
+
 .bar span{margin-left:.4rem;flex:1}
+
 .bar em{font-style:normal;font-size:1rem;opacity:.8}
+
 .bar a{font-size:1.1rem;text-decoration:none;background:var(--beige);padding:0 .6rem;border-radius:999px;border:1.5px solid var(--dg)}
+
 .bar a:hover{background:var(--dg);color:var(--beige)}
+
 .body{padding:1.4rem}
+
 .pk{--c1:var(--rose);--c2:#f0c4bb}
+
 .tl{--c1:var(--teal);--c2:var(--moss)}
+
 .tl .bar{color:var(--beige)}
+
 .tl .bar i{border-color:var(--beige);background:transparent}
 
+
+
 /* HEADINGS */
+
 .sec-title{font-family:var(--px);font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);
-  margin-bottom:2rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+
+margin-bottom:2rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+
 .sec-title small{font-family:var(--mono);font-size:1.3rem;font-weight:400;color:var(--dg);
-  background:var(--rose);padding:0 .6rem;border-radius:999px;border:2px solid var(--beige)}
+
+background:var(--rose);padding:0 .6rem;border-radius:999px;border:2px solid var(--beige)}
+
 .sec-title::after{content:'✦ ✦ ✦';color:var(--rose);font-size:1rem;letter-spacing:.3em}
 
+
+
 /* BUTTONS */
+
 .btn{display:inline-block;padding:.65rem 1.5rem;border-radius:999px;text-decoration:none;
-  font-family:var(--mono);font-size:1.25rem;border:2px solid var(--dg);color:var(--dg);
-  background:linear-gradient(180deg,#fff 0%,var(--rose) 55%,#c47f74 100%);
-  box-shadow:0 4px 0 var(--dg);transition:transform .15s,box-shadow .15s}
+
+font-family:var(--mono);font-size:1.25rem;border:2px solid var(--dg);color:var(--dg);
+
+background:linear-gradient(180deg,#fff 0%,var(--rose) 55%,#c47f74 100%);
+
+box-shadow:0 4px 0 var(--dg);transition:transform .15s,box-shadow .15s}
+
 .btn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--dg)}
+
 .btn.g{background:linear-gradient(180deg,#fff 0%,var(--moss) 55%,#6e8349 100%)}
+
 .btn.b{background:linear-gradient(180deg,#d9f0f4 0%,var(--teal) 60%,#0a3e4a 100%);color:var(--beige)}
 
+
+
 /* HERO */
+
 #hero{padding:3.5rem 0 2rem}
+
 .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2rem;align-items:center}
+
 .chip{display:inline-block;font-family:var(--mono);font-size:1.2rem;background:var(--moss);color:var(--dg);
-  padding:0 .8rem;border-radius:999px;border:2px solid var(--dg);margin-bottom:.8rem}
+
+padding:0 .8rem;border-radius:999px;border:2px solid var(--dg);margin-bottom:.8rem}
+
 .chip::before{content:'● ';color:var(--teal);animation:bl 1.4s steps(2) infinite}
+
 @keyframes bl{50%{opacity:0}}
+
 h1{font-family:var(--px);font-weight:700;font-size:clamp(3rem,9vw,6.4rem);line-height:.95;letter-spacing:-.02em;
-  background:linear-gradient(180deg,#fff 0%,var(--beige) 30%,var(--rose) 60%,var(--moss) 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(3px 3px 0 var(--teal)) drop-shadow(5px 5px 0 var(--dg))}
+
+background:linear-gradient(180deg,#fff 0%,var(--beige) 30%,var(--rose) 60%,var(--moss) 100%);
+
+-webkit-background-clip:text;background-clip:text;color:transparent;
+
+filter:drop-shadow(3px 3px 0 var(--teal)) drop-shadow(5px 5px 0 var(--dg))}
+
 .role{font-family:var(--mono);font-size:1.6rem;color:var(--rose);margin:.8rem 0}
+
 .role b{color:var(--moss);font-weight:400}
+
 .desc{max-width:500px;color:#f7f4d5cc;margin-bottom:1.6rem}
+
 .ctas{display:flex;gap:.9rem;flex-wrap:wrap}
+
 .sticker{text-align:center}
+
 .orb{width:210px;height:210px;border-radius:50%;margin:0 auto 1rem;display:grid;place-items:end center;overflow:hidden;
-  border:3px solid var(--beige);box-shadow:0 0 0 6px var(--rose),0 0 50px rgba(211,150,140,.6);
-  background:radial-gradient(circle at 30% 25%,#fff 0,var(--beige) 35%,var(--rose) 100%);animation:fl 4s ease-in-out infinite}
+
+border:3px solid var(--beige);box-shadow:0 0 0 6px var(--rose),0 0 50px rgba(211,150,140,.6);
+
+background:radial-gradient(circle at 30% 25%,#fff 0,var(--beige) 35%,var(--rose) 100%);animation:fl 4s ease-in-out infinite}
+
 .orb svg{width:150px;height:175px}
+
 @keyframes fl{50%{transform:translateY(-12px) rotate(3deg)}}
+
 .sticker p{font-family:var(--mono);font-size:1.3rem;color:var(--moss)}
 
+
+
 /* ABOUT */
+
 .about{display:grid;grid-template-columns:1.2fr 1fr;gap:1.8rem;align-items:start}
+
 .about p{margin-bottom:.9rem}
+
 .about p b{color:var(--teal)}
+
 .row{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:2px dotted var(--moss);font-size:.9rem}
+
 .row:last-child{border:none}
+
 .row span:first-child{font-family:var(--mono);font-size:1.15rem;color:var(--teal)}
+
 .row a{font-weight:700;text-decoration:underline wavy var(--rose)}
+
 .ok{background:var(--moss);padding:0 .6rem;border-radius:999px;border:1.5px solid var(--dg);font-weight:700}
 
+
+
 /* SKILLS / TAGS */
+
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+
 .tags{display:flex;flex-wrap:wrap;gap:.4rem}
+
 .tags span{font-family:var(--mono);font-size:1.1rem;padding:0 .7rem;border-radius:999px;background:#fff8;border:1.5px solid var(--dg)}
+
 .tags span:nth-child(3n+1){background:var(--rose)}
+
 .tags span:nth-child(3n+2){background:var(--moss)}
 
+
+
 /* PROJECTS */
+
 .projects{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem}
+
 .feat{grid-column:1/-1}
+
 .win h3{font-family:var(--px);font-size:1.3rem;margin-bottom:.4rem;line-height:1.2}
+
 .win p{font-size:.92rem;margin-bottom:.9rem}
+
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:.9rem;font-family:var(--mono);font-size:1.15rem}
+
 .flow span{background:var(--teal);color:var(--beige);padding:0 .7rem;border-radius:6px;border:2px solid var(--dg)}
+
 .flow i{font-style:normal;color:var(--rose)}
 
+
+
 /* EXPERIENCE */
+
 .time{position:relative;padding-left:2.2rem;display:grid;gap:1.6rem}
+
 .time::before{content:'';position:absolute;left:.7rem;top:0;bottom:0;border-left:3px dashed var(--rose)}
+
 .time .win{position:relative}
+
 .time .win::before{content:'✦';position:absolute;left:-2.2rem;top:.3rem;width:1.5rem;height:1.5rem;display:grid;place-items:center;
-  border-radius:50%;background:var(--rose);color:var(--dg);font-size:.9rem;border:2px solid var(--beige)}
+
+border-radius:50%;background:var(--rose);color:var(--dg);font-size:.9rem;border:2px solid var(--beige)}
+
 .time p{margin:0!important}
 
+
+
 /* BEYOND */
-.beyond .win p{margin:0}
-.beyond .win b{font-family:var(--mono);font-size:1.2rem;color:var(--teal);font-weight:400}
-.beyond .win p+p{margin-top:.8rem}
+
+.beyond .win p,#research .win p{margin:0}
+
+.beyond .win b,#research .win b{font-family:var(--mono);font-size:1.2rem;color:var(--teal);font-weight:400}
+
+.beyond .win p+p,#research .win p+p{margin-top:.6rem}
+
+
 
 /* CONTACT */
+
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+
 .contact h2{font-family:var(--px);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1}
+
 .contact h2 em{font-style:normal;color:var(--rose)}
+
 .looking{margin-top:1.8rem}
+
 .looking .body{background:#f4b0c8;background:var(--rose)}
+
 .links{display:grid;gap:1rem}
+
 .links a{display:flex;justify-content:space-between;gap:1rem;align-items:center;text-decoration:none;
-  padding:.8rem 1.2rem;border-radius:999px;border:2px solid var(--dg);color:var(--dg);
-  background:linear-gradient(180deg,#fff 0%,var(--beige) 50%,#e3dfb6 100%);box-shadow:0 4px 0 var(--rose);transition:transform .15s}
+
+padding:.8rem 1.2rem;border-radius:999px;border:2px solid var(--dg);color:var(--dg);
+
+background:linear-gradient(180deg,#fff 0%,var(--beige) 50%,#e3dfb6 100%);box-shadow:0 4px 0 var(--rose);transition:transform .15s}
+
 .links a:hover{transform:translateX(6px)}
+
 .links small{font-family:var(--mono);font-size:1.1rem;color:var(--teal);display:block;line-height:1}
+
 .links b{font-size:.95rem;word-break:break-all}
+
 .catwrap{display:flex;justify-content:flex-end;margin:0 2rem -.2rem}
+
 .catwrap svg{width:110px;height:128px}
 
+
+
 footer{border-top:3px dashed var(--rose);padding:1.6rem 1.5rem;text-align:center;font-family:var(--mono);font-size:1.2rem;color:var(--rose)}
+
 footer span{color:var(--moss)}
 
+
+
 @media(max-width:860px){
+
   nav ul{display:none}nav{justify-content:center}
+
   .hero-grid,.about,.projects,.contact{grid-template-columns:1fr}
+
   .orb{width:170px;height:170px}.orb svg{width:120px;height:140px}
+
 }
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+
 </style>
+
 </head>
+
 <body>
 
+
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+
   <symbol id="cat" viewBox="0 0 120 140">
+
     <path d="M90 124C126 124 128 84 108 80" fill="none" stroke="#16151a" stroke-width="9" stroke-linecap="round"/>
+
     <path d="M28 134C20 92 36 68 60 68s40 24 32 66z" fill="#16151a"/>
+
     <ellipse cx="48" cy="130" rx="11" ry="7" fill="#16151a"/><ellipse cx="72" cy="130" rx="11" ry="7" fill="#16151a"/>
+
     <path d="M32 40L30 10l22 14zM88 40l2-30L68 24z" fill="#16151a"/>
+
     <path d="M35 30l-1-12 10 7zM85 30l1-12-10 7z" fill="#D3968C"/>
+
     <ellipse cx="60" cy="50" rx="31" ry="26" fill="#16151a"/>
+
     <ellipse cx="48" cy="49" rx="6.5" ry="7.5" fill="#839958"/><ellipse cx="72" cy="49" rx="6.5" ry="7.5" fill="#839958"/>
+
     <ellipse cx="48" cy="49" rx="1.8" ry="6" fill="#16151a"/><ellipse cx="72" cy="49" rx="1.8" ry="6" fill="#16151a"/>
+
     <circle cx="50" cy="46" r="1.6" fill="#fff"/><circle cx="74" cy="46" r="1.6" fill="#fff"/>
+
     <path d="M56 58h8l-4 5z" fill="#D3968C"/>
+
     <path d="M60 63q-5 6-10 3M60 63q5 6 10 3M30 54l-14-3M30 60l-14 3M90 54l14-3M90 60l14 3" fill="none" stroke="#F7F4D5" stroke-width="1.4" stroke-linecap="round"/>
+
     <path d="M60 76l-14-7v14zM60 76l14-7v14z" fill="#D3968C" stroke="#F7F4D5" stroke-width="1.5" stroke-linejoin="round"/><circle cx="60" cy="76" r="4" fill="#F7F4D5"/>
+
   </symbol>
+
 </svg>
 
+
+
 <nav>
+
   <div class="logo">kh<b>.dev</b> ✿</div>
+
   <ul>
+
     <li><a href="#about">about</a></li>
+
     <li><a href="#skills">skills</a></li>
+
     <li><a href="#projects">projects</a></li>
+
+    <li><a href="#research">research</a></li>
+
     <li><a href="#experience">experience</a></li>
+
     <li><a href="#beyond">beyond</a></li>
+
     <li><a href="#contact">contact</a></li>
+
   </ul>
+
 </nav>
 
+
+
 <!-- HERO -->
+
 <section id="hero">
+
   <div class="wrap hero-grid">
+
     <div>
-      <span class="chip">seeking PFE · 4–6 months · AI / Data</span>
+
+      <span class="chip">seeking PFE 2027 · AI / Data Science / ML</span>
+
       <h1>Kaouthar<br>Hamdan</h1>
-      <p class="role"><b>&gt;</b> AI &amp; Data Science Student</p>
-      <p class="desc">I build intelligent systems — RAG, NLP, computer vision and LLM pipelines — on top of clean, scalable data foundations. Playful on the surface, serious about the engineering underneath.</p>
+
+      <p class="role"><b>&gt;</b> Data Science <b>·</b> Machine Learning <b>·</b> Applied AI</p>
+
+      <p class="desc">I work across machine learning, data engineering and applied AI: from preparing messy data and evaluating models to building retrieval systems and analytical pipelines. I am especially interested in the mathematics behind learning, optimization, and turning experiments into systems that can be tested and understood.</p>
+
       <div class="ctas">
+
         <a href="#projects" class="btn">View Projects →</a>
-        <a href="https://github.com/vany-gr34" target="_blank" class="btn g">GitHub</a>
+
+        <a href="https://github.com/vany-gr34" target="_blank" rel="noopener noreferrer" class="btn g">GitHub</a>
+
         <a href="#contact" class="btn b">Contact</a>
+
       </div>
+
     </div>
+
     <div class="sticker">
+
       <div class="orb"><svg><use href="#cat"/></svg></div>
-      <p>~/kaouthar-hamdan $ whoami</p>
+
+      <p>\~/kaouthar-hamdan $ whoami</p>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ABOUT -->
+
 <section id="about">
+
   <div class="wrap">
+
     <h2 class="sec-title"><small>01</small> Who I Am</h2>
+
     <div class="about">
+
       <div class="win">
+
         <div class="bar"><i></i><i></i><span>about_me.txt</span></div>
+
         <div class="body">
-          <p>I'm an <b>AI &amp; Data Science student</b> who loves creating powerful systems that have a real impact — systems that change the whole game by taking care of our data to build the highest forms of intelligence.</p>
-          <p>My focus is <b>machine learning, deep learning, NLP and LLMs</b>: Retrieval-Augmented Generation, local LLMs with Ollama, LLM benchmarking, computer vision, and forecasting on big data.</p>
-          <p>I back it up with <b>data engineering and MLOps</b> — streaming pipelines, experiment tracking and deployment — so models don't just work in a notebook, they ship.</p>
-          <p>Right now I'm looking for a <b>4–6 month PFE</b> in AI / data.</p>
+
+          <p>I am a <b>Master’s student in Data Science and Artificial Intelligence</b> at FSTT in Tangier. I enjoy understanding a problem from its data and mathematical assumptions through to a model, evaluation, and usable solution.</p>
+
+          <p>My work spans <b>machine learning, deep learning, NLP, computer vision and forecasting</b>. I have built classification experiments, compared pretrained video models, explored LLM-based retrieval, and worked with industrial data.</p>
+
+          <p>I also care about the foundations around a model: <b>data quality, reproducible experiments, evaluation, and data pipelines</b>. I want to understand not only whether a system works, but where it fails and what evidence supports its results.</p>
+
+          <p>I am looking for a <b>PFE internship for 2027</b> in data science, machine learning, applied AI, or data engineering.</p>
+
         </div>
+
       </div>
+
       <div class="win pk">
+
         <div class="bar"><i></i><i></i><span>profile.exe</span></div>
+
         <div class="body">
-          <div class="row"><span>Status</span><span class="ok">Seeking PFE</span></div>
-          <div class="row"><span>Focus</span><span>AI · LLMs · Data Science</span></div>
-          <div class="row"><span>Studying</span><span>M.Sc. AI &amp; Data Science</span></div>
-          <div class="row"><span>Location</span><span>Morocco</span></div>
-          <div class="row"><span>GitHub</span><a href="https://github.com/vany-gr34" target="_blank">vany-gr34</a></div>
-          <div class="row"><span>LinkedIn</span><a href="https://www.linkedin.com/in/kaouthar-hamdan/" target="_blank">kaouthar-hamdan</a></div>
-          <div class="row"><span>Kaggle</span><a href="https://www.kaggle.com/kaoutharhamdan" target="_blank">kaoutharhamdan</a></div>
+
+          <div class="row"><span>Status</span><span class="ok">PFE 2027</span></div>
+
+          <div class="row"><span>Focus</span><span>ML · Applied AI · Data</span></div>
+
+          <div class="row"><span>Studying</span><span>M.Sc. Data Science & AI</span></div>
+
+          <div class="row"><span>Location</span><span>Tangier, Morocco</span></div>
+
+          <div class="row"><span>GitHub</span><a href="https://github.com/vany-gr34" target="_blank" rel="noopener noreferrer">vany-gr34</a></div>
+
+          <div class="row"><span>LinkedIn</span><a href="https://www.linkedin.com/in/kaouthar-hamdan/" target="_blank" rel="noopener noreferrer">kaouthar-hamdan</a></div>
+
+          <div class="row"><span>Kaggle</span><a href="https://www.kaggle.com/kaoutharhamdan" target="_blank" rel="noopener noreferrer">kaoutharhamdan</a></div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- SKILLS -->
+
 <section id="skills">
+
   <div class="wrap">
-    <h2 class="sec-title"><small>02</small> Skills &amp; Tools</h2>
+
+    <h2 class="sec-title"><small>02</small> Skills & Tools</h2>
+
     <div class="grid3">
-      <div class="win tl"><div class="bar"><i></i><span>ml_and_ai</span></div><div class="body"><div class="tags"><span>Scikit-learn</span><span>PyTorch</span><span>TensorFlow</span><span>Hugging Face</span><span>Deep Learning</span><span>Computer Vision</span><span>Forecasting</span></div></div></div>
-      <div class="win pk"><div class="bar"><i></i><span>llms_and_nlp</span></div><div class="body"><div class="tags"><span>LLMs</span><span>RAG</span><span>Ollama</span><span>LLM Benchmarking</span><span>NLP</span><span>Arabic NLP</span><span>Vector DBs</span></div></div></div>
-      <div class="win"><div class="bar"><i></i><span>mlops</span></div><div class="body"><div class="tags"><span>MLflow</span><span>Docker Compose</span><span>FastAPI</span><span>CI/CD</span><span>MinIO</span></div></div></div>
+
+      <div class="win tl"><div class="bar"><i></i><span>ml_and_ai</span></div><div class="body"><div class="tags"><span>Scikit-learn</span><span>PyTorch</span><span>TensorFlow / Keras</span><span>Hugging Face</span><span>Deep Learning</span><span>Computer Vision</span><span>Video Classification</span><span>Forecasting</span><span>XGBoost</span></div></div></div>
+
+      <div class="win pk"><div class="bar"><i></i><span>llms_and_nlp</span></div><div class="body"><div class="tags"><span>LLMs</span><span>RAG</span><span>Embeddings</span><span>Prompt Design</span><span>NLP</span><span>Arabic Text Processing</span><span>Vector Search</span></div></div></div>
+
+      <div class="win"><div class="bar"><i></i><span>mlops</span></div><div class="body"><div class="tags"><span>MLflow</span><span>Docker Compose</span><span>FastAPI</span><span>Flask</span><span>Model Evaluation</span></div></div></div>
+
       <div class="win"><div class="bar"><i></i><span>languages</span></div><div class="body"><div class="tags"><span>Python</span><span>Java</span><span>JavaScript</span><span>Bash</span></div></div></div>
-      <div class="win pk"><div class="bar"><i></i><span>data_engineering</span></div><div class="body"><div class="tags"><span>Apache Spark</span><span>Kafka</span><span>Airflow</span><span>NiFi</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span></div></div></div>
+
+      <div class="win pk"><div class="bar"><i></i><span>data_engineering</span></div><div class="body"><div class="tags"><span>Apache Spark</span><span>Kafka</span><span>Airflow</span><span>PostgreSQL</span><span>MongoDB</span><span>pandas</span><span>SQL</span></div></div></div>
+
       <div class="win tl"><div class="bar"><i></i><span>viz_and_bi</span></div><div class="body"><div class="tags"><span>Grafana</span><span>Metabase</span><span>Power BI</span></div></div></div>
+
+      <div class="win"><div class="bar"><i></i><span>optimization</span></div><div class="body"><div class="tags"><span>Metaheuristics</span><span>Harris Hawks Optimization</span><span>Genetic Algorithms</span><span>Simulated Annealing</span><span>TSP / CVRP</span></div></div></div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- PROJECTS -->
+
 <section id="projects">
+
   <div class="wrap">
+
     <h2 class="sec-title"><small>03</small> Featured Projects</h2>
+
     <div class="projects">
 
+
+
       <div class="win feat">
-        <div class="bar"><i></i><i></i><span>amazon_sentiment.exe</span><a href="https://github.com/vany-gr34/amazon_sentiment_analysis" target="_blank">GitHub ↗</a></div>
+
+        <div class="bar"><i></i><i></i><span>amazon_sentiment.exe</span><a href="https://github.com/vany-gr34/amazon_sentiment_analysis" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+
         <div class="body">
+
           <h3>Amazon Sentiment Analysis Platform</h3>
-          <p>A real-time NLP pipeline for sentiment analysis on Amazon product reviews, with a full MLOps lifecycle — Kafka ingestion, RoBERTa inference, MLflow tracking and Grafana dashboards — all containerized with Docker Compose.</p>
-          <div class="flow"><span>Kafka</span><i>→</i><span>Spark Streaming</span><i>→</i><span>RoBERTa / FastAPI</span><i>→</i><span>MongoDB</span><i>→</i><span>Grafana</span></div>
+
+          <p>An end-to-end sentiment-analysis platform for Amazon product reviews, designed around event ingestion, model inference, storage, orchestration and monitoring. The project brings together NLP and data engineering rather than treating prediction as a standalone notebook.</p>
+
+          <div class="flow"><span>Kafka</span><i>→</i><span>Spark</span><i>→</i><span>FastAPI / RoBERTa</span><i>→</i><span>Storage</span><i>→</i><span>Analytics</span></div>
+
           <div class="tags"><span>RoBERTa</span><span>NLP</span><span>MLflow</span><span>FastAPI</span><span>Kafka</span><span>Spark</span><span>Airflow</span><span>Docker</span><span>MongoDB</span><span>Grafana</span></div>
+
         </div>
+
       </div>
 
+
+
       <div class="win pk">
-        <div class="bar"><i></i><i></i><span>legal_rag.exe</span><em>in progress</em></div>
+
+        <div class="bar"><i></i><i></i><span>legal_rag.exe</span><em>developing</em></div>
+
         <div class="body">
+
           <h3>Moroccan Legal RAG System</h3>
-          <p>Arabic NLP and Retrieval-Augmented Generation for Moroccan legal documents: OCR-powered processing, hybrid semantic retrieval, vector databases, and LLM-generated contextual legal answers.</p>
+
+          <p>A legal-document question-answering project focused on Moroccan legislation. The workflow explores PDF ingestion, text normalization, embeddings, retrieval with PostgreSQL/pgvector, and answers grounded in retrieved legal content.</p>
+
           <div class="tags"><span>Arabic NLP</span><span>RAG</span><span>OCR</span><span>Vector DB</span><span>LLMs</span><span>Semantic Search</span></div>
+
         </div>
+
       </div>
+
+
 
       <div class="win tl">
-        <div class="bar"><i></i><i></i><span>starks.exe</span><a href="https://github.com/vany-gr34/starks_v" target="_blank">GitHub ↗</a></div>
+
+        <div class="bar"><i></i><i></i><span>crime_video_benchmark.exe</span><a href="https://github.com/vany-gr34/Criminal-Behavior-Detection-" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+
         <div class="body">
-          <h3>Starks — Defect Detection</h3>
-          <p>End-to-end industrial defect detection built on YOLOv11 for real-time quality inspection: computer vision, automated ML pipelines and deployment-ready REST APIs for manufacturing.</p>
-          <div class="tags"><span>YOLOv11</span><span>Computer Vision</span><span>MLOps</span><span>REST API</span><span>Real-time Detection</span></div>
+
+          <h3>Criminal Behavior Detection — Video Model Benchmark</h3>
+
+          <p>A comparative video-classification study across 3,274 videos pooled from three public datasets. I evaluated seven model implementations using stratified splits, pretrained weights where available, fine-tuning and held-out testing.</p>
+
+          <p>MViT-v2-S achieved 90.04% test accuracy and 0.898 macro-F1 on 492 held-out clips. The leading models’ confidence intervals overlap, so the comparison does not establish a definitive winner. The SlowFast- and X3D-inspired entries are custom fallback networks, not the original architectures.</p>
+
+          <div class="tags"><span>PyTorch</span><span>Torchvision</span><span>Hugging Face</span><span>Transfer Learning</span><span>Video Preprocessing</span><span>Model Evaluation</span></div>
+
         </div>
+
       </div>
+
+
 
       <div class="win">
-        <div class="bar"><i></i><i></i><span>stock_analytics.exe</span><a href="https://github.com/vany-gr34/Stock-analytics-" target="_blank">GitHub ↗</a></div>
+
+        <div class="bar"><i></i><i></i><span>hho_combinatorial.exe</span><a href="https://github.com/vany-gr34/harris-hawks-optimisation" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+
         <div class="body">
-          <h3>Stock Analytics Platform</h3>
-          <p>Analytics platform for stock market data: time-series analysis, market indicators and interactive dashboards.</p>
-          <div class="tags"><span>Python</span><span>Time-Series</span><span>Analytics</span><span>Dashboards</span></div>
+
+          <h3>Harris Hawks Optimization for Combinatorial Problems</h3>
+
+          <p>Adapted continuous Harris Hawks Optimization to permutation-based combinatorial problems: the Travelling Salesman Problem (TSP) and Capacitated Vehicle Routing Problem (CVRP). The implementation explores continuous-to-discrete transformations, permutation repair, exploration and exploitation strategies, and Lévy-flight dives.</p>
+
+          <div class="tags"><span>Metaheuristics</span><span>HHO</span><span>TSP</span><span>CVRP</span><span>Lévy Flight</span><span>Python</span></div>
+
         </div>
+
       </div>
 
-      <div class="win pk">
-        <div class="bar"><i></i><i></i><span>energy_bi.exe</span></div>
+
+
+      <div class="win tl">
+
+        <div class="bar"><i></i><i></i><span>starks.exe</span><a href="https://github.com/vany-gr34/starks_v" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+
         <div class="body">
-          <h3>BI Energy Analytics Platform</h3>
-          <p>End-to-end BI on hourly electrical energy consumption (PJM dataset): ETL, KPI dashboards, time-series analysis and automated reporting.</p>
-          <div class="tags"><span>ETL</span><span>Power BI</span><span>Time-Series</span><span>KPI Tracking</span></div>
+
+          <h3>Starks — Defect Detection</h3>
+
+          <p>A computer-vision application using YOLOv11 to detect six categories of industrial surface defects. The project includes image inference, bounding-box visualization and a Flask interface for inspecting predictions.</p>
+
+          <div class="tags"><span>YOLOv11</span><span>Computer Vision</span><span>MLOps</span><span>REST API</span><span>Image Inference</span></div>
+
         </div>
+
+      </div>
+
+
+
+      <div class="win">
+
+        <div class="bar"><i></i><i></i><span>fraud_detection.exe</span><a href="https://dagshub.com/vany-gr34/Fraud-Detection-System" target="_blank" rel="noopener noreferrer">DagsHub ↗</a></div>
+
+        <div class="body">
+
+          <h3>Fraud Detection & Data Versioning</h3>
+
+          <p>An in-progress fraud-detection project using the IEEE-CIS dataset, with a focus on reproducible ML development and versioning data artifacts through DVC and DagsHub. Dataset files are kept separate from the source repository.</p>
+
+          <div class="tags"><span>Fraud Detection</span><span>DVC</span><span>DagsHub</span><span>Reproducibility</span></div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="win pk">
+
+        <div class="bar"><i></i><i></i><span>energy_bi.exe</span></div>
+
+        <div class="body">
+
+          <h3>BI Energy Analytics Platform</h3>
+
+          <p>Business intelligence project using hourly PJM electricity data to explore energy patterns through data preparation, time-based analysis, KPIs and dashboard reporting.</p>
+
+          <div class="tags"><span>ETL</span><span>Power BI</span><span>Time-Series</span><span>KPI Tracking</span></div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- RESEARCH -->
+
+<section id="research">
+
+  <div class="wrap">
+
+    <h2 class="sec-title"><small>04</small> Research Interests</h2>
+
+    <div class="grid3">
+
+      <div class="win pk"><div class="bar"><i></i><i></i><span>metaheuristics.txt</span></div><div class="body">
+
+        <p><b>Optimization algorithms.</b> I am interested in how metaheuristics behave on discrete and constrained problems, how to design fair baseline comparisons, and how evaluation budgets and stochastic variation affect conclusions.</p></div></div>
+
+      <div class="win"><div class="bar"><i></i><i></i><span>math_for_ai.txt</span></div><div class="body">
+
+        <p><b>Mathematics for machine learning.</b> Probability, statistics, linear algebra and optimization: the ideas that explain how models learn, how uncertainty should be interpreted, and when a result is reliable.</p></div></div>
+
+      <div class="win tl"><div class="bar"><i></i><i></i><span>core_ai.txt</span></div><div class="body">
+
+        <p><b>Reliable applied AI.</b> Model evaluation, forecasting, retrieval quality and explainability. I am interested in systems that distinguish evidence from generated text and make limitations visible to users.</p></div></div>
+
+    </div>
+
+    <div class="win" style="margin-top:1.6rem">
+
+      <div class="bar"><i></i><i></i><span>open_questions.txt</span></div>
+
+      <div class="body">
+
+        <p><b>Questions I like to chase</b></p>
+
+        <p>How can we compare stochastic optimization algorithms fairly when the objective is noisy and evaluation budgets are limited?</p>
+
+        <p>How should a model communicate uncertainty instead of presenting every prediction as equally reliable?</p>
+
+        <p>How can retrieval and language models make analytical results easier to interpret without replacing the underlying evidence?</p>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- EXPERIENCE -->
+
 <section id="experience">
+
   <div class="wrap">
-    <h2 class="sec-title"><small>04</small> Experience</h2>
+
+    <h2 class="sec-title"><small>05</small> Experience</h2>
+
     <div class="time">
+
       <div class="win">
+
         <div class="bar"><i></i><span>yazaki_bsc.log</span></div>
-        <div class="body">
-          <h3>Yazaki BSC — Data Science Intern</h3>
-          <p><b>Industrial Analytics —</b> Processing SAP manufacturing data to support production analysis and forecasting.</p>
-          <p style="margin-top:.7rem"><b>Decision Intelligence —</b> Contributing to a modular decision support system integrating prediction, forecasting, optimization and explainability.</p>
-          <div class="tags" style="margin-top:.9rem"><span>Python</span><span>SAP Data</span><span>Forecasting</span><span>Optimization</span><span>Decision Support</span></div>
-        </div>
+
+        <div class="body"><h3>Yazaki BSC · Data Science Intern</h3><p>Worked with SAP material-movement history and material master data to investigate operational patterns. Explored temporal feature engineering and forecasting for material outflow, within a broader industrial decision-support project.</p></div>
+
       </div>
+
       <div class="win pk">
+
         <div class="bar"><i></i><span>smart_automation.log</span></div>
+
         <div class="body">
-          <h3>Smart Automation Technologies — AI Intern</h3>
-          <p><b>Predictive Maintenance —</b> Developed a network security system for cyberattack classification using CICIDS2018 data and machine learning models.</p>
-          <p style="margin-top:.7rem"><b>Intelligent Security Assistant —</b> Integrated a retrieval-based chatbot and monitoring dashboard for security analysis and network insights.</p>
-          <div class="tags" style="margin-top:.9rem"><span>Python</span><span>LSTM</span><span>XGBoost</span><span>RAG</span><span>Network Security</span></div>
+
+          <h3>Smart Automation Technologies · Data Science & AI Intern</h3>
+
+          <p><b>Applied AI —</b> Contributed to a cybersecurity question-answering assistant using Flask, Pinecone, MiniLM embeddings and Llama models accessed through the Groq API.</p>
+
+          <p style="margin-top:.7rem"><b>Machine learning —</b> Prepared CICIDS2018 network-traffic data, selected features using ANOVA, and worked on LSTM and XGBoost classification experiments for cybersecurity monitoring.</p>
+
+          <div class="tags" style="margin-top:.9rem"><span>Python</span><span>LSTM</span><span>XGBoost</span><span>RAG</span><span>Pinecone</span><span>MiniLM</span></div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- BEYOND -->
+
 <section id="beyond" class="beyond">
+
   <div class="wrap">
-    <h2 class="sec-title"><small>05</small> Beyond the CV</h2>
+
+    <h2 class="sec-title"><small>06</small> Beyond the CV</h2>
+
     <div class="grid3">
+
       <div class="win pk"><div class="bar"><i></i><i></i><span>hobbies</span></div><div class="body">
-        <p><b>reading</b><br>I love seeing how humans can be creative in interpreting the universe.</p>
-        <p><b>writing</b><br>Our only way to really explain the unexplained. A Substack is coming ✦</p></div></div>
+
+        <p><b>reading</b><br>I like ideas that connect technology with society, human behaviour and the ways people interpret the world.</p>
+
+        <p><b>writing</b><br>I write to test ideas, make complicated topics clearer, and explore the relationship between technology and people.</p></div></div>
+
       <div class="win"><div class="bar"><i></i><i></i><span>life_out_of_screen</span></div><div class="body">
-        <p>Running and hiking — the kind of hiking where you stop to observe nature.</p></div></div>
-      <div class="win tl"><div class="bar"><i></i><i></i><span>Pov</span></div><div class="body">
-        <p>I also love electronics.</p><p>I believe in human intelligence.</p><p>Tech isn’t the problem or the answer. It’s a tool, and humanity wins when we learn how to use it well.</p></div></div>
+
+        <p>Running, gym and hiking — especially the kind of hike that leaves time to notice what is around you.</p></div></div>
+
+      <div class="win tl"><div class="bar"><i></i><i></i><span>fun_facts</span></div><div class="body">
+
+        <p>I enjoy electronics and understanding how things work beneath the surface.</p><p>I believe technology should support human judgment, not replace it uncritically.</p></div></div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- CONTACT -->
+
 <section id="contact">
+
   <div class="wrap">
-    <h2 class="sec-title"><small>06</small> Let's Connect</h2>
+
+    <h2 class="sec-title"><small>07</small> Let's Connect</h2>
+
     <div class="contact">
+
       <div>
-        <h2>Let's build<br><em>something</em> ✿</h2>
+
+        <h2>Let's build<br><em>something useful</em> ✿</h2>
+
         <div class="win pk looking">
+
           <div class="bar"><i></i><i></i><span>what_im_looking_for.txt</span></div>
-          <div class="body"><p><b>A team that builds together, a clean pipeline and a hard AI or data problem.</b></p><p style="margin-top:.7rem">A PFE of 4 to 6 months in AI / data.</p></div>
+
+          <div class="body"><p><b>I am looking for a team where I can investigate hard data problems, build carefully, test assumptions, and learn from strong technical feedback.</b></p><p style="margin-top:.7rem">PFE 2027 · Data Science · Machine Learning · Applied AI · Data Engineering</p></div>
+
         </div>
+
       </div>
+
       <div>
+
         <div class="catwrap"><svg><use href="#cat"/></svg></div>
+
         <div class="links">
+
           <a href="mailto:hamdankaouthar@gmail.com"><span><small>Email</small><b>hamdankaouthar@gmail.com</b></span>↗</a>
-          <a href="https://www.linkedin.com/in/kaouthar-hamdan/" target="_blank"><span><small>LinkedIn</small><b>kaouthar-hamdan</b></span>↗</a>
-          <a href="https://github.com/vany-gr34" target="_blank"><span><small>GitHub</small><b>vany-gr34</b></span>↗</a>
-          <a href="tel:+212656918851"><span><small>Phone</small><b>+212 6 56 91 88 51</b></span>↗</a>
+
+          <a href="https://www.linkedin.com/in/kaouthar-hamdan/" target="_blank" rel="noopener noreferrer"><span><small>LinkedIn</small><b>kaouthar-hamdan</b></span>↗</a>
+
+          <a href="https://github.com/vany-gr34" target="_blank" rel="noopener noreferrer"><span><small>GitHub</small><b>vany-gr34</b></span>↗</a>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
-<footer>✦ Built with love ✦ Kaouthar Hamdan <span>© 2026</span></footer>
+
+
+<footer>✦ Built with curiosity, code, data and one very good cat ✦ Kaouthar Hamdan <span>© 2026</span></footer>
+
+
 
 </body>
+
 </html>
